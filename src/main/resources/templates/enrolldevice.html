@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+    <form action="#" th:action="@{/enrolldevice}" th:object="${enrolldevice}" method="post">
+            <table>
+                <tr>
+                    <td>User Id:</td>
+                    <td><input type="text" th:field="*{userId}" /></td>
+                    <td th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">Name Error</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Age Error</td>
+                </tr>
+                 <tr>
+                    <td>User Name:</td>
+                    <td><input type="text" th:field="*{userName}" /></td>
+                    <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Age Error</td>
+                </tr>
+                
+                 <tr>
+                    <td>Password</td>
+                    <td><input type="text" th:field="*{userPass}" /></td>
+                    <td th:if="${#fields.hasErrors('userPass')}" th:errors="*{userPass}">Age Error</td>
+                </tr>
+                
+                 <tr>
+                    <td>Enroll Status:</td>
+                    <td><input type="text" th:field="*{enrollStatus}" /></td>
+                    <td th:if="${#fields.hasErrors('enrollStatus')}" th:errors="*{enrollStatus}">Age Error</td>
+                </tr>
+                 <tr>
+                    <td>Key:</td>
+                    <td><input type="text" th:field="*{userKey}" /></td>
+                    <td th:if="${#fields.hasErrors('userKey')}" th:errors="*{userKey}">Age Error</td>
+                </tr>
+              
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+</body>
+</html>
